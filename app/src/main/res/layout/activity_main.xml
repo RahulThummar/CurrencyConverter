@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtcrncy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/currency_converter"
+        android:textColor="@color/Blue"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <LinearLayout
+        android:id="@+id/fromRelative"
+        android:layout_width="wrap_content"
+        android:background="@drawable/custom_spinner"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/currencyToBeConverted"
+        app:layout_constraintEnd_toStartOf="@+id/transferSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtcrncy">
+
+        <Spinner
+            android:id="@+id/spinnerFrom"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:padding="20dp"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/transferSpinner"
+        android:layout_width="60dp"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_btn"
+        android:drawableRight="@drawable/ic_transfer_spinner"
+        android:onClick="transferSpinner"
+        android:paddingRight="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fromRelative"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fromRelative" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toRelative"
+        android:background="@drawable/custom_spinner"
+        app:layout_constraintBottom_toBottomOf="@+id/transferSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/transferSpinner"
+        app:layout_constraintTop_toTopOf="@+id/transferSpinner" >
+        <Spinner
+            android:id="@+id/spinnerTo"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:padding="20dp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/currencyToBeConverted"
+        android:layout_width="260dp"
+        android:layout_height="55dp"
+        android:textCursorDrawable="@color/Blue"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/custom_edittext"
+        android:elevation="5dp"
+        android:paddingStart="15dp"
+        android:ems="10"
+        android:hint="@string/money"
+        android:inputType="number"
+        android:textColor="@color/Blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transferSpinner" />
+
+    <Button
+        android:id="@+id/convert"
+        android:layout_width="260dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/custom_btn"
+        android:elevation="5dp"
+        android:onClick="convert"
+        android:text="@string/convert"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currencyToBeConverted" />
+
+    <TextView
+        android:id="@+id/currencyConverted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/converted_currency"
+        android:textColor="@color/Blue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convert"
+        app:layout_constraintVertical_bias="0.14" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
