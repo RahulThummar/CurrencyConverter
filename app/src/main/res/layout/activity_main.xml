@@ -108,7 +108,7 @@
         android:id="@+id/currencyConverted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/converted_currency"
+        android:text=""
         android:textColor="@color/Blue"
         android:textSize="25sp"
         android:textStyle="bold"
